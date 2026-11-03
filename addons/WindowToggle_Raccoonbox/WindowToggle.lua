@@ -179,6 +179,7 @@ end
 local menu = CreateFrame("Frame", "WindowToggleMenu", UIParent, "UIDropDownMenuTemplate")
 
 local function InitMenu()
+	if not WindowToggleDB then return end
 	local info = {}
 	info.text = "Small window size"
 	info.isTitle = 1
@@ -210,7 +211,8 @@ local function InitMenu()
 	end
 end
 
-UIDropDownMenu_Initialize(menu, InitMenu, "MENU")
+-- Note: the menu is set up on right-click only. Setting it up at load time runs
+-- InitMenu before saved settings exist and breaks the whole addon.
 
 local justDragged = false
 
