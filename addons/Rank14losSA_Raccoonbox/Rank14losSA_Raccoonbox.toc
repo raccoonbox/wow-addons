@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: |CFF00FF00Rank14losSA |CFFFF9900[Nampower] |cffff9900[Raccoonbox]
+## Notes: Backport of GladiatorlosSA - Nampower edition
+## Version: 3.0.0
+## Author: Meow [me0wg4ming]
+## SavedVariables: RSAConfig, RSA_AlertFrameX, RSA_AlertFrameY, RSA_AlertFrameEnabled, RSA_AlertFrameBgAlpha, RSA_PortraitIconShape
+
+RSA_Data.lua
+RSA_Detection.lua
+RSA_UI.lua
+RSA_Core.lua
+RSA.xml

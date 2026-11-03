@@ -1,0 +1,5 @@
+## Interface: 11200
+## Title: HideButtons_Raccoonbox
+## Notes: Hide minimap buttons. Hover a button and type /hidebtn.
+## SavedVariables: HideButtonsDB
+HideButtons.lua

@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: |cff33ffccShagu|cffffffffPlates |cffff9900[Raccoonbox]
+## Author: Shagu
+## Notes: Nameplate addon featuring castbars, class colors and much more. Type /splates to show the settings.
+## Version: 5.4.21
+## SavedVariables: ShaguPlates_profiles, ShaguPlates_addon_profiles, ShaguPlates_cache
+## SavedVariablesPerCharacter: ShaguPlates_config, ShaguPlates_init, ShaguPlates_playerDB
+
+ShaguPlates.lua
+
+init\env.xml
+init\compat.xml
+init\api.xml
+init\libs.xml
+init\modules.xml
