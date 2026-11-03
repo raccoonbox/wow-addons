@@ -10,10 +10,6 @@ Addons for the World of Warcraft 1.12 (vanilla) client. Collected by Raccoonbox.
 2. Copy the addon folders you want from `addons/` into your game's `Interface/AddOns/` folder.
 3. Restart the game and tick the addons in the **AddOns** list on the character select screen.
 
-## Welcome message
-
-Every Raccoonbox addon includes a small shared file, `RaccoonboxWelcome.lua`, that shows one welcome line in chat 20 seconds after you log in, after the other login messages. If you use several Raccoonbox addons you still see it only once.
-
 ## Addons
 
 ### Made by Raccoonbox
