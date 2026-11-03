@@ -1,11 +1,12 @@
 -- WindowToggle: click the minimap button to switch between a maximised window
--- and a small window (1024x576 by default, same 16:9 shape as the screen).
+-- and a small window (1024 wide by default, same shape as your screen).
 -- Drag the button to move it around the minimap.
 -- /wt size <W>x<H>  sets the small window size, e.g. /wt size 1280x720
+-- /wt size auto     back to the default (1024 wide, your screen's shape)
 -- /wt list          shows the sizes the client accepts
 -- /wt reset         puts the button back to its default position
 
-local defaults = { angle = 200, small = "1024x576" }
+local defaults = { angle = 200, small = "auto" }
 
 local function Print(msg)
 	DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99WindowToggle:|r " .. msg)
@@ -45,16 +46,23 @@ end
 -- closest listed size with the same shape as the screen, so the UI only
 -- scales down evenly and nothing shifts sideways.
 local function SmallSize()
-	local _, _, tw, th = string.find(WindowToggleDB.small, "(%d+)x(%d+)")
-	tw, th = tonumber(tw) or 1024, tonumber(th) or 576
 	local nw, nh = NativeSize()
 	local aspect = nw / nh
+	local tw, th
+	if WindowToggleDB.small == "auto" then
+		-- 1024 wide, height from this screen's own shape (16:9 -> 576, 16:10 -> 640, 21:9 -> ~438)
+		tw = 1024
+		th = math.floor(1024 / aspect / 2 + 0.5) * 2
+	else
+		local _, _, w, h = string.find(WindowToggleDB.small, "(%d+)x(%d+)")
+		tw, th = tonumber(w) or 1024, tonumber(h) or 576
+	end
 	local bestW, bestH, bestDiff
 	local list = { GetScreenResolutions() }
 	for i = 1, table.getn(list) do
 		local _, _, lw, lh = string.find(list[i], "(%d+)x(%d+)")
 		lw, lh = tonumber(lw), tonumber(lh)
-		if lw == tw and lh == th then
+		if lw == tw and lh == th and math.abs(lw / lh - aspect) < 0.02 then
 			return tw, th
 		end
 		if lw and lh and math.abs(lw / lh - aspect) < 0.02 then
@@ -62,6 +70,13 @@ local function SmallSize()
 			if not bestDiff or diff < bestDiff then
 				bestW, bestH, bestDiff = lw, lh, diff
 			end
+		end
+	end
+	-- A size you typed yourself is used as-is if the client lists it, even with a
+	-- different shape. Otherwise prefer a listed size with the screen's shape.
+	if WindowToggleDB.small ~= "auto" then
+		for i = 1, table.getn(list) do
+			if list[i] == tw .. "x" .. th then return tw, th end
 		end
 	end
 	if bestW then
@@ -150,7 +165,8 @@ button:SetScript("OnEnter", function()
 	GameTooltip:SetOwner(this, "ANCHOR_LEFT")
 	GameTooltip:AddLine("WindowToggle")
 	if IsMaximised() then
-		GameTooltip:AddLine("Click: small window (" .. WindowToggleDB.small .. ")", 1, 1, 1)
+		local sw, sh = SmallSize()
+		GameTooltip:AddLine("Click: small window (" .. sw .. "x" .. sh .. ")", 1, 1, 1)
 	else
 		GameTooltip:AddLine("Click: maximised window", 1, 1, 1)
 	end
@@ -170,6 +186,8 @@ loader:SetScript("OnEvent", function()
 	for k, v in pairs(defaults) do
 		if WindowToggleDB[k] == nil then WindowToggleDB[k] = v end
 	end
+	-- older versions saved the fixed 16:9 default; switch those to auto
+	if WindowToggleDB.small == "1024x576" then WindowToggleDB.small = "auto" end
 	UpdatePosition()
 end)
 
@@ -179,7 +197,10 @@ SlashCmdList["WINDOWTOGGLE"] = function(msg)
 	cmd = string.lower(cmd or "")
 	if cmd == "size" then
 		local _, _, w, h = string.find(arg or "", "^(%d+)%s*[xX]%s*(%d+)$")
-		if w and h then
+		if string.lower(arg or "") == "auto" then
+			WindowToggleDB.small = "auto"
+			Print("small window back to default (1024 wide, your screen's shape).")
+		elseif w and h then
 			WindowToggleDB.small = w .. "x" .. h
 			Print("small window set to " .. WindowToggleDB.small .. ".")
 		else

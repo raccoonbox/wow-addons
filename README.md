@@ -14,7 +14,7 @@ Addons for the 1.12 (vanilla) WoW client, collected by Raccoonbox.
 
 | Addon | What it does |
 |---|---|
-| **WindowToggle_Raccoonbox** | Minimap button that switches the game between a maximised window and a small 1024×576 window. Drag to move. `/wt size 1280x720` changes the small size, `/wt list` shows accepted sizes. |
+| **WindowToggle_Raccoonbox** | Minimap button that switches the game between a maximised window and a small window (1024 wide, same shape as your screen). Drag to move. `/wt size 1280x720` sets a custom size, `/wt size auto` goes back to default, `/wt list` shows accepted sizes. |
 | **HideButtons_Raccoonbox** | Hide any minimap button: hover over it and type `/hidebtn`. It stays hidden. `/hidebtn list`, `/hidebtn clear`. |
 
 ### Modified versions of other authors' addons
