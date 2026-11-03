@@ -21,13 +21,13 @@ Addons for the World of Warcraft 1.12 (vanilla) client. Collected by Raccoonbox.
 
 ### Modified versions of other authors' addons
 
-| Addon | Original author | |
-|---|---|---|
-| **ShaguPlates_Raccoonbox** | Shagu ([ShaguPlates](https://github.com/shagu/ShaguPlates), MIT) | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/ShaguPlates_Raccoonbox.zip) |
-| **ShaguTweaks_Raccoonbox** | Shagu ([ShaguTweaks](https://github.com/shagu/ShaguTweaks), MIT) | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/ShaguTweaks_Raccoonbox.zip) |
-| **Outfitter_Raccoonbox** | Outfitter 1.5.3 (see the addon's README) | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/Outfitter_Raccoonbox.zip) |
-| **Rank14losSA_Raccoonbox** | Reborn Nampower edition by our friend Meow ([me0wg4ming](https://github.com/me0wg4ming)), based on [Rank14losSA](https://github.com/Fiskehatt/Rank14losSA) by Nogall, a backport of GladiatorlosSA | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/Rank14losSA_Raccoonbox.zip) |
-| **TotemTimers_Raccoonbox** | LYQ, originally by Grumpey / Zulah | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/TotemTimers_Raccoonbox.zip) |
+| Addon | What Raccoonbox changed | Based on | |
+|---|---|---|---|
+| **ShaguPlates_Raccoonbox** | Hide pets and low level companions completely, chat bubbles above nameplates, Blizzard raid icons above the name. [Full changelog](addons/ShaguPlates_Raccoonbox/CHANGELOG.md) | Shagu ([ShaguPlates](https://github.com/shagu/ShaguPlates), MIT) | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/ShaguPlates_Raccoonbox.zip) |
+| **ShaguTweaks_Raccoonbox** | Auto Tracking (re-enables Find Herbs etc. after death), Shake To Find Cursor, keep your own face with class portraits. [Full changelog](addons/ShaguTweaks_Raccoonbox/CHANGELOG.md) | Shagu ([ShaguTweaks](https://github.com/shagu/ShaguTweaks), MIT) | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/ShaguTweaks_Raccoonbox.zip) |
+| **Outfitter_Raccoonbox** | Key binding to open the outfit menu at your cursor. [Full changelog](addons/Outfitter_Raccoonbox/CHANGELOG.md) | [Outfitter 1.5.3](https://github.com/sica42/Outfitter) | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/Outfitter_Raccoonbox.zip) |
+| **Rank14losSA_Raccoonbox** | Earth Shock alert, all Divine Shield/Protection ranks, adjustable alert range (`/rsa range`), works without UnitXP. [Full changelog](addons/Rank14losSA_Raccoonbox/CHANGELOG.md) | Nampower edition by our friend Meow ([me0wg4ming](https://github.com/me0wg4ming)), based on [Rank14losSA](https://github.com/Fiskehatt/Rank14losSA) by Nogall, a backport of GladiatorlosSA | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/Rank14losSA_Raccoonbox.zip) |
+| **TotemTimers_Raccoonbox** | Party Totems: see other party shamans' totems and timers (`/ttparty on`). [Full changelog](addons/TotemTimers_Raccoonbox/CHANGELOG.md) | LYQ, originally by Grumpey / Zulah | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/TotemTimers_Raccoonbox.zip) |
 
 All credit for the original addons goes to their authors.
 
