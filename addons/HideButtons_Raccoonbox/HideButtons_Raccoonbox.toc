@@ -2,4 +2,5 @@
 ## Title: HideButtons_Raccoonbox
 ## Notes: Hide minimap buttons. Hover a button and type /hidebtn.
 ## SavedVariables: HideButtonsDB
+RaccoonboxWelcome.lua
 HideButtons.lua

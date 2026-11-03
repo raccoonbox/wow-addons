@@ -6,5 +6,6 @@
 ## SavedVariables: TTData, TTActiveTotems, TTPartyData
 ## OptionalDeps: Debug
 ## Dependencies:
+RaccoonboxWelcome.lua
 TotemTimers.xml
 PartyTotems.lua

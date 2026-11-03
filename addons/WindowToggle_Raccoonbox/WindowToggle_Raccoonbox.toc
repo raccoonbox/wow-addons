@@ -2,4 +2,5 @@
 ## Title: WindowToggle_Raccoonbox
 ## Notes: Minimap button that switches between a maximised window and a small window.
 ## SavedVariables: WindowToggleDB
+RaccoonboxWelcome.lua
 WindowToggle.lua

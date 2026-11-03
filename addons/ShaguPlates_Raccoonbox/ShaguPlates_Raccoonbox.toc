@@ -6,6 +6,7 @@
 ## SavedVariables: ShaguPlates_profiles, ShaguPlates_addon_profiles, ShaguPlates_cache
 ## SavedVariablesPerCharacter: ShaguPlates_config, ShaguPlates_init, ShaguPlates_playerDB
 
+RaccoonboxWelcome.lua
 ShaguPlates.lua
 
 init\env.xml

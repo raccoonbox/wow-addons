@@ -5,6 +5,7 @@
 ## Author: Meow [me0wg4ming]
 ## SavedVariables: RSAConfig, RSA_AlertFrameX, RSA_AlertFrameY, RSA_AlertFrameEnabled, RSA_AlertFrameBgAlpha, RSA_PortraitIconShape
 
+RaccoonboxWelcome.lua
 RSA_Data.lua
 RSA_Detection.lua
 RSA_UI.lua
