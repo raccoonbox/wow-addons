@@ -1,6 +1,8 @@
 # Raccoonbox WoW Addons
 
-Addons for the 1.12 (vanilla) WoW client, collected by Raccoonbox.
+Addons for the World of Warcraft 1.12 (vanilla) client. Collected by Raccoonbox.
+
+*Not affiliated with or endorsed by Blizzard Entertainment.*
 
 ## Install
 
