@@ -110,7 +110,7 @@ button:SetHeight(31)
 button:SetFrameStrata("MEDIUM")
 button:SetFrameLevel(8)
 button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
-button:RegisterForClicks("LeftButtonUp")
+button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 button:RegisterForDrag("LeftButton")
 button:SetMovable(true)
 
@@ -142,6 +142,76 @@ local function DragUpdate()
 	UpdatePosition()
 end
 
+-- Right-click menu: pick the small window size ------------------------------
+
+-- Listed sizes with the screen's shape, smaller than the screen, largest first.
+local function SizeChoices()
+	local nw, nh = NativeSize()
+	local aspect = nw / nh
+	local out = {}
+	local list = { GetScreenResolutions() }
+	for i = 1, table.getn(list) do
+		local _, _, w, h = string.find(list[i], "(%d+)x(%d+)")
+		w, h = tonumber(w), tonumber(h)
+		if w and h and w < nw and math.abs(w / h - aspect) < 0.02 then
+			table.insert(out, list[i])
+		end
+	end
+	local function Width(s)
+		local _, _, w = string.find(s, "^(%d+)")
+		return tonumber(w) or 0
+	end
+	table.sort(out, function(a, b) return Width(a) > Width(b) end)
+	return out
+end
+
+local function PickSize(value)
+	WindowToggleDB.small = value
+	CloseDropDownMenus()
+	if not IsMaximised() then
+		SetSmall() -- already small: resize right away
+	else
+		local sw, sh = SmallSize()
+		Print("small window set to " .. sw .. "x" .. sh .. ".")
+	end
+end
+
+local menu = CreateFrame("Frame", "WindowToggleMenu", UIParent, "UIDropDownMenuTemplate")
+
+local function InitMenu()
+	local info = {}
+	info.text = "Small window size"
+	info.isTitle = 1
+	info.notCheckable = 1
+	UIDropDownMenu_AddButton(info)
+
+	local aw, ah
+	do
+		local saved = WindowToggleDB.small
+		WindowToggleDB.small = "auto"
+		aw, ah = SmallSize()
+		WindowToggleDB.small = saved
+	end
+	info = {}
+	info.text = "Auto (" .. aw .. "x" .. ah .. ")"
+	info.value = "auto"
+	info.checked = WindowToggleDB.small == "auto"
+	info.func = function() PickSize(this.value) end
+	UIDropDownMenu_AddButton(info)
+
+	local choices = SizeChoices()
+	for i = 1, table.getn(choices) do
+		info = {}
+		info.text = choices[i]
+		info.value = choices[i]
+		info.checked = WindowToggleDB.small == choices[i]
+		info.func = function() PickSize(this.value) end
+		UIDropDownMenu_AddButton(info)
+	end
+end
+
+UIDropDownMenu_Initialize(menu, InitMenu, "MENU")
+
 local justDragged = false
 
 button:SetScript("OnDragStart", function()
@@ -154,6 +224,12 @@ end)
 button:SetScript("OnClick", function()
 	if justDragged then
 		justDragged = false
+		return
+	end
+	if arg1 == "RightButton" then
+		GameTooltip:Hide()
+		UIDropDownMenu_Initialize(menu, InitMenu, "MENU")
+		ToggleDropDownMenu(1, nil, menu, "WindowToggleMinimapButton", 0, 0)
 		return
 	end
 	Toggle()
@@ -170,6 +246,7 @@ button:SetScript("OnEnter", function()
 	else
 		GameTooltip:AddLine("Click: maximised window", 1, 1, 1)
 	end
+	GameTooltip:AddLine("Right-click: choose small window size", 1, 1, 1)
 	GameTooltip:AddLine("Drag: move button", 0.7, 0.7, 0.7)
 	GameTooltip:Show()
 end)
