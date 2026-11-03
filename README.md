@@ -24,7 +24,7 @@ Addons for the 1.12 (vanilla) WoW client, collected by Raccoonbox.
 | **ShaguPlates_Raccoonbox** | Shagu ([ShaguPlates](https://github.com/shagu/ShaguPlates), MIT) |
 | **ShaguTweaks_Raccoonbox** | Shagu ([ShaguTweaks](https://github.com/shagu/ShaguTweaks), MIT) |
 | **Outfitter_Raccoonbox** | Outfitter 1.5.3 (see the addon's README) |
-| **Rank14losSA_Raccoonbox** | Meow (me0wg4ming), backport of GladiatorlosSA |
+| **Rank14losSA_Raccoonbox** | Reborn Nampower edition by our friend Meow ([me0wg4ming](https://github.com/me0wg4ming)), based on [Rank14losSA](https://github.com/Fiskehatt/Rank14losSA) by Nogall, a backport of GladiatorlosSA |
 | **TotemTimers_Raccoonbox** | LYQ, originally by Grumpey / Zulah |
 
 All credit for the original addons goes to their authors.
