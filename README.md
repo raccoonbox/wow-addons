@@ -10,7 +10,7 @@ Addons for the 1.12 (vanilla) WoW client, collected by Raccoonbox.
 
 ## Welcome message
 
-Every Raccoonbox addon includes a small shared file, `RaccoonboxWelcome.lua`, that shows one welcome line in chat when you log in. If you use several Raccoonbox addons you still see it only once.
+Every Raccoonbox addon includes a small shared file, `RaccoonboxWelcome.lua`, that shows one welcome line in chat 20 seconds after you log in, after the other login messages. If you use several Raccoonbox addons you still see it only once.
 
 ## Addons
 
