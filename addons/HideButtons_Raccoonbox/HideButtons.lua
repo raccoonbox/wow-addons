@@ -9,8 +9,13 @@ local function Print(msg)
 	DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99HideButtons:|r " .. msg)
 end
 
+local function noop() end
+
 local function KeepHidden(frame)
 	if not frame or frame == Minimap or frame == UIParent or frame == WorldFrame then return end
+	-- Disable this frame's own Show so game/server code can't bring it back,
+	-- even if it later replaces the OnShow script.
+	frame.Show = noop
 	frame:Hide()
 	frame:SetScript("OnShow", function() this:Hide() end)
 end
@@ -49,7 +54,9 @@ f:SetScript("OnEvent", function()
 			nextRun = nextRun + 1
 			ApplyAll()
 		end
-		if elapsedTotal > 15 then f:SetScript("OnUpdate", nil) end
+		-- First 15s: every second. After that keep a slow check every 5s,
+		-- for buttons that the game creates or re-shows later.
+		if elapsedTotal > 15 and nextRun < elapsedTotal + 5 then nextRun = elapsedTotal + 5 end
 	end)
 end)
 
