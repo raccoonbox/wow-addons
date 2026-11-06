@@ -116,26 +116,18 @@ StaticPopupDialogs.VALORCHAT_URL = {
 	EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
 }
 
--- Catch clicks on our links before Blizzard's own link handling sees them.
-local wrapped = {}
-local function WrapChatFrame(cf)
-	if not cf or wrapped[cf] then return end
-	local orig = cf:GetScript("OnHyperlinkClick")
-	if not orig then return end
-	wrapped[cf] = true
-	cf:SetScript("OnHyperlinkClick", function(self, link, text, button, ...)
+-- Clicks on our links: listen AFTER Blizzard has handled the click (a post-hook). Replacing the
+-- chat windows' click handler instead made every chat click run through addon code, and Blizzard
+-- then blocked guild invites that used a name clicked in chat.
+-- "garrmission" links with a non-number ID are ignored by Blizzard's own handler, so only ours acts.
+if SetItemRef then
+	hooksecurefunc("SetItemRef", function(link)
 		local url = type(link) == "string" and link:match("^garrmission:valorurl:(.+)$")
-		if url then
-			StaticPopup_Show("VALORCHAT_URL", nil, nil, url)
-			return
-		end
-		return orig(self, link, text, button, ...)
+		if url then StaticPopup_Show("VALORCHAT_URL", nil, nil, url) end
 	end)
 end
 
 local function WrapAll()
-	for _, name in ipairs(CHAT_FRAMES or {}) do WrapChatFrame(_G[name]) end
-	for i = 1, (NUM_CHAT_WINDOWS or 10) do WrapChatFrame(_G["ChatFrame" .. i]) end
 	AllEditBoxes(SetupHistory)
 	AllEditBoxes(FixArrows)
 end
