@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Keep Tracking |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\INV_Misc_Flower_02
+## Notes: Turns Find Herbs / Find Minerals (and any other minimap tracking you had) back on after you die and come back. /keeptracking
+## Version: 1.0.0
+## SavedVariables: RaccoonboxSharedDB
+## SavedVariablesPerCharacter: KeepTrackingDB
+
+RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
+KeepTracking.lua

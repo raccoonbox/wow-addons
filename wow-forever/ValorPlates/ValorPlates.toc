@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: Valor Plates |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\INV_Shield_06
+## Notes: Choose how health/mana numbers show on your and your target's bars, and lift enemy nameplates so damage numbers show below them. /vplates
+## Version: 0.2.0
+## SavedVariables: ValorPlatesDB, RaccoonboxSharedDB
+
+RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
+ValorPlates.lua

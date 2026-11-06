@@ -26,6 +26,9 @@ Made by Raccoonbox for Blizzard's WoW: Forever (client 1.60).
 | **Window Mover** | Drag game windows anywhere: quests, spellbook, professions, character, talents, merchants, mail, auction house and more. They remember their spot. Hover any other window and type `/wmover this` to make it movable too. | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/QuestMover-Forever.zip) |
 | **Window Toggle** | Minimap button that switches the game between a maximised window and a small window. **Right-click** to pick the small window size. `/wt` | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/WindowToggle_Raccoonbox-Forever.zip) |
 | **Hide Locked Slots** | Hides the 4 locked "secure your account" backpack slots and the green + button. | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/HideLockedSlots-Forever.zip) |
+| **Quest Freedom** | Quest without spoilers: new quests aren't focused or tracked by themselves and quest search areas stay off the map and minimap. Stuck? `/qfree hint` shows them. | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/QuestFreedom-Forever.zip) |
+| **Keep Tracking** | Dying switches off Find Herbs / Find Minerals. Keep Tracking turns your minimap tracking back on as soon as you're alive again. | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/KeepTracking-Forever.zip) |
+| **Valor Plates** | Lifts enemy nameplates higher so your damage numbers show below them, and lets you choose how health/mana numbers show on your bars (current / max, percent, both). `/vplates` | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/ValorPlates-Forever.zip) |
 
 ## World of Warcraft 1.12 (vanilla)
 
