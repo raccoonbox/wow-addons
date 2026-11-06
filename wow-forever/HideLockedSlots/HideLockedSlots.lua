@@ -96,3 +96,13 @@ SlashCmdList.HIDELOCKEDSLOTS = function()
 		end
 	end
 end
+
+---------------------------------------------------------------------------- options page
+if RaccoonboxOptions then
+	RaccoonboxOptions.AddPanel({
+		name = "Hide Locked Slots",
+		about = "Hides the 4 locked \"secure your account\" backpack slots and the green + button, so your backpack "
+			.. "only shows the slots you can use. Nothing to set up.",
+		commands = { { "/hls", "list which backpack slots are hidden (open your bags first) - for bug reports" } },
+	})
+end

@@ -1,8 +1,11 @@
 ## Interface: 16001
 ## Title: Craft Well |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\Trade_Alchemy
 ## Notes: Queue crafts, remember them, and get a shopping list at vendors and the auction house. /cwell
 ## Version: 0.1.0
+## SavedVariables: RaccoonboxSharedDB
 ## SavedVariablesPerCharacter: CraftWellDB
 
 RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
 CraftWell.lua

@@ -225,6 +225,9 @@ local function ArrowButton(step)
 		if step > 0 then t:SetTexCoord(0, 1, 1, 1, 0, 0, 1, 0)
 		else t:SetTexCoord(0, 0, 1, 0, 0, 1, 1, 1) end
 		t:SetPoint("CENTER", double and ((i == 1 and -2 or 2)) or 0, 0) -- close enough to overlap a little
+		-- draw the rear triangle on top of the front one, on both sides (the look of the left << button)
+		local rear = (step > 0 and i == 1) or (step < 0 and i == 2)
+		t:SetDrawLayer("ARTWORK", rear and 1 or 0)
 	end
 	b:SetHighlightTexture("Interface\\Buttons\\UI-Common-MouseHilight", "ADD")
 	b:SetScript("OnClick", function()
@@ -575,4 +578,28 @@ SlashCmdList.CRAFTWELL = function(msg)
 		Refresh()
 		if not F.manual then F:Hide() end
 	end
+end
+
+---------------------------------------------------------------------------- options page
+if RaccoonboxOptions then
+	RaccoonboxOptions.AddPanel({
+		name = "Craft Well",
+		about = "Queue crafts in the profession window and Craft Well remembers them. It shows the materials you still miss, "
+			.. "lets you buy them at a vendor with one click and search them at the auction house with one click.",
+		commands = {
+			{ "/craftwell", "open or close the Craft Well panel anywhere (also /cwell)" },
+			{ "/craftwell clear", "empty the queue" },
+			{ "/craftwell expand", "turn splitting self-crafted materials on or off" },
+		},
+		build = function(b)
+			b:Check("Split materials you can craft yourself into their ingredients",
+				"Example: a potion that needs another potion you make yourself shows the herbs and vials for that one too.",
+				function() return db and db.expand end,
+				function(v) if db then db.expand = v; Refresh() end end)
+			b:Buttons({
+				{ "Open Craft Well", function() SlashCmdList.CRAFTWELL("") end },
+				{ "Clear queue", function() SlashCmdList.CRAFTWELL("clear") end },
+			})
+		end,
+	})
 end

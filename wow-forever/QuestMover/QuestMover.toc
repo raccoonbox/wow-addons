@@ -1,8 +1,10 @@
 ## Interface: 16001
-## Title: Quest Mover |cffff9900[Raccoonbox]|r
-## Notes: Drag the quest, gossip, quest log and readable item (letters, parchments) windows anywhere. They remember their spot. /qmover reset
-## Version: 1.1.0
-## SavedVariables: QuestMoverDB
+## Title: Window Mover |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\Ability_Hunter_Pathfinding
+## Notes: Drag game windows anywhere (quests, spellbook, professions, character, merchants, mail and more). They remember their spot. /wmover
+## Version: 1.2.0
+## SavedVariables: QuestMoverDB, RaccoonboxSharedDB
 
 RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
 QuestMover.lua

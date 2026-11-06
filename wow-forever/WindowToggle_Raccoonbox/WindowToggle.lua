@@ -187,3 +187,29 @@ SlashCmdList.WINDOWTOGGLE = function(msg)
 		Print("/wt (toggle), /wt size 1280x720, /wt size auto, /wt reset")
 	end
 end
+
+---------------------------------------------------------------------------- options page
+if RaccoonboxOptions then
+	RaccoonboxOptions.AddPanel({
+		name = "Window Toggle",
+		about = "A minimap button (spyglass) that switches the game between a maximised window and a small window. "
+			.. "Right-click the button to choose the small size, drag it to move it around the minimap.",
+		commands = {
+			{ "/wt", "switch between maximised and small window" },
+			{ "/wt size 1280x720", "use your own small window size" },
+			{ "/wt size auto", "back to the default small size" },
+			{ "/wt reset", "put the minimap button back in its default spot" },
+		},
+		build = function(b)
+			local sw, sh = ScreenSize()
+			local aw = 1024
+			local options = { { "auto", "Auto (" .. aw .. "x" .. (math.floor(aw * sh / sw / 2 + 0.5) * 2) .. ")" } }
+			for _, c in ipairs(SizeChoices()) do options[#options + 1] = { c, c } end
+			b:Choice("Small window size:", options, function() return db and db.small end, function(v) PickSize(v) end)
+			b:Buttons({
+				{ "Switch window now", function() Toggle() end },
+				{ "Reset minimap button", function() db.angle = defaults.angle; UpdatePosition() end },
+			})
+		end,
+	})
+end

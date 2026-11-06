@@ -17,13 +17,15 @@ Pick the addon from the section that matches your game. The WoW: Forever and 1.1
 
 Made by Raccoonbox for Blizzard's WoW: Forever (client 1.60).
 
+**Easy to use, no commands to remember:** every add-on has its own settings and help page. Click the round **Raccoonbox** button on your minimap (or type `/raccoonbox`, or go to Esc → Options → AddOns → Raccoonbox). The main page also has a few useful hidden game settings (sounds from the camera, track quests by hand, health/mana numbers as current / max). Right-click the minimap button to jump straight to an add-on, and click any command on a page to put it in your chat.
+
 | Addon | What it does | |
 |---|---|---|
 | **Craft Well** | Queue crafts in the profession window (with +1 / +5 arrows) and it remembers them. Shows a shopping list of the materials you still need, with one click **Buy missing** at vendors and click-to-search at the auction house. `/craftwell` | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/CraftWell-Forever.zip) |
 | **Valor Chat** | Chat spell checker (teh -> the, dont -> don't), shorthand expansion (brb -> be right back), friendly GG/GZ/GJ/THX lines, arrow keys and Up/Down message history in the chat box, clickable web links you can copy. `/vc` | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/ValorChat-Forever.zip) |
+| **Window Mover** | Drag game windows anywhere: quests, spellbook, professions, character, talents, merchants, mail, auction house and more. They remember their spot. Hover any other window and type `/wmover this` to make it movable too. | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/QuestMover-Forever.zip) |
 | **Window Toggle** | Minimap button that switches the game between a maximised window and a small window. **Right-click** to pick the small window size. `/wt` | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/WindowToggle_Raccoonbox-Forever.zip) |
 | **Hide Locked Slots** | Hides the 4 locked "secure your account" backpack slots and the green + button. | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/HideLockedSlots-Forever.zip) |
-| **Quest Mover** | Drag the quest, gossip, quest log and letter/book windows anywhere. They remember their spot. `/qmover reset` | [Download](https://github.com/raccoonbox/wow-addons/releases/latest/download/QuestMover-Forever.zip) |
 
 ## World of Warcraft 1.12 (vanilla)
 
