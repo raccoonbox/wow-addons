@@ -1,0 +1,8 @@
+## Interface: 16001
+## Title: Craft Well |cffff9900[Raccoonbox]|r
+## Notes: Queue crafts, remember them, and get a shopping list at vendors and the auction house. /cwell
+## Version: 0.1.0
+## SavedVariablesPerCharacter: CraftWellDB
+
+RaccoonboxWelcome.lua
+CraftWell.lua

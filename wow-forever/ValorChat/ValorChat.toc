@@ -1,0 +1,12 @@
+## Interface: 16001
+## Title: Valor Chat |cffff9900[Raccoonbox]|r
+## Notes: Chat spell checker, friendly GG/GZ/GJ/THX lines, arrow keys + history in the chat box, copyable web links. /vc
+## Version: 2.1.0
+## SavedVariables: ValorChatDB
+
+RaccoonboxWelcome.lua
+Core.lua
+SpellData.lua
+SpellCheck.lua
+GG.lua
+ChatTweaks.lua

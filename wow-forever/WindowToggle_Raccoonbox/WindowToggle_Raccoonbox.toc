@@ -1,0 +1,8 @@
+## Interface: 16001
+## Title: Window Toggle |cffff9900[Raccoonbox]|r
+## Notes: Minimap button that switches between a maximised window and a small window. /wt
+## Version: 2.0.0
+## SavedVariables: WindowToggleDB
+
+RaccoonboxWelcome.lua
+WindowToggle.lua

@@ -1,0 +1,3 @@
+<Bindings>
+	<Binding name="VALORCHAT_GG" header="VALORCHAT">ValorChat_SendGG()</Binding>
+</Bindings>
