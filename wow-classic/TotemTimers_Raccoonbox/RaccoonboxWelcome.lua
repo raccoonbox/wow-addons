@@ -25,7 +25,7 @@ local SEND_DELAY = 25     -- ... and before telling others our versions
 local THROTTLE = 600      -- tell the same channel at most every 10 minutes
 local PREFIX = "RBXV"
 local SITE = "|cff33ccffraccoonbox.com|r"
-local DOWNLOAD = "|cff33ccffgithub.com/raccoonbox/wow-addons/releases|r"
+local DOWNLOAD = "|cff33ccffgithub.com/raccoonbox/wow-addons|r"
 
 local f = CreateFrame("Frame")
 RaccoonboxWelcome = f
