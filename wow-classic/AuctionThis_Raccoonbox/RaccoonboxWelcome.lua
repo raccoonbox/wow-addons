@@ -7,7 +7,7 @@ local ADDON_ID, ADDON_NAME, ADDON_FOLDER, ADDON_VERSION = "auctionthis", "Auctio
 -- Version check: the addons tell each other their versions over addon messages (guild, party, raid,
 -- battleground). When a copy hears a higher version of an addon you have, it prints one line. Only
 -- version numbers are sent; the text shown is always this file's own, never something received.
-local LIB = 2
+local LIB = 3
 RaccoonboxAddons = RaccoonboxAddons or {}
 RaccoonboxAddons[ADDON_ID] = { name = ADDON_NAME,
 	version = ADDON_VERSION or GetAddOnMetadata(ADDON_FOLDER, "Version") or "0" }
@@ -25,6 +25,7 @@ local SEND_DELAY = 25     -- ... and before telling others our versions
 local THROTTLE = 600      -- tell the same channel at most every 10 minutes
 local PREFIX = "RBXV"
 local SITE = "|cff33ccffraccoonbox.com|r"
+local DOWNLOAD = "|cff33ccffgithub.com/raccoonbox/wow-addons/releases|r"
 
 local f = CreateFrame("Frame")
 RaccoonboxWelcome = f
@@ -106,7 +107,7 @@ local function heard(msg, channel, sender)
 		if mine and parse(version) then
 			if newer(version, mine.version) and not told[id] then
 				told[id] = true
-				say(mine.name .. " " .. version .. " is out (you have " .. mine.version .. "). Get it at " .. SITE .. ".")
+				say(mine.name .. " " .. version .. " is out (you have " .. mine.version .. "). Get it at " .. DOWNLOAD .. ".")
 			elseif newer(mine.version, version) then
 				replies[channel] = true -- they'll learn about ours
 			end
@@ -148,5 +149,5 @@ SlashCmdList.RACCOONBOX = function()
 	local names = {}
 	for _, a in pairs(RaccoonboxAddons) do tinsert(names, a.name .. " " .. a.version) end
 	sort(names)
-	say("your add-ons: " .. table.concat(names, ", ") .. ". New versions: " .. SITE)
+	say("your add-ons: " .. table.concat(names, ", ") .. ". New versions: " .. DOWNLOAD)
 end
