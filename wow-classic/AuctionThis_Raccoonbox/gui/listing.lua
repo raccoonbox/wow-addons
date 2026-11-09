@@ -178,7 +178,7 @@ local methods = {
 
 	    local tex = col:CreateTexture()
 	    tex:SetAllPoints()
-	    tex:SetTexture([[Interface\AddOns\AuctionThis\WorldStateFinalScore-Highlight]])
+	    tex:SetTexture([[Interface\AddOns\AuctionThis_Raccoonbox\WorldStateFinalScore-Highlight]])
 	    tex:SetTexCoord(.017, 1, .083, .909)
 	    tex:SetAlpha(.5)
 

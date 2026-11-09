@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Buff Watch |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\Spell_Nature_LightningShield
+## Notes: Big reminders like SHIELD OFF when one of your own buffs or your weapon enchant/poison is missing. Defaults for every class. /buffwatch
+## Version: 1.1.0
+## SavedVariablesPerCharacter: BuffWatchDB
+## SavedVariables: RaccoonboxSharedDB
+
+RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
+BuffWatch.lua

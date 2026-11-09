@@ -73,7 +73,7 @@ ev:RegisterEvent("ADDON_LOADED")
 ev:RegisterEvent("PLAYER_REGEN_ENABLED")
 ev:SetScript("OnEvent", function(_, event, addon)
 	if event == "PLAYER_REGEN_ENABLED" then RestoreShown() return end -- catch up after combat
-	if addon == "QuestMover" then
+	if addon == "WindowMover_Raccoonbox" then
 		QuestMoverDB = QuestMoverDB or {}
 		db = QuestMoverDB
 		db._added = db._added or {}

@@ -1,0 +1,17 @@
+## Interface: 16001
+## Title: Dress Code |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\INV_Chest_Cloth_04
+## Notes: Game fashion and gear: find gear that beats what you wear, see where it comes from, and dress your character in two outfits on a stage of your choice. /dresscode
+## Author: Raccoonbox
+## Version: 0.1.0
+## SavedVariables: DressCodeDB, RaccoonboxSharedDB
+## SavedVariablesPerCharacter: DressCodeChar
+## AddonCompartmentFunc: DressCode_OnAddonCompartmentClick
+
+RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
+Theme.lua
+Catalog.lua
+Stage.lua
+Core.lua
+UI.lua

@@ -1,6 +1,6 @@
 -- Shared Raccoonbox file: welcome message + "new version" check. Every Raccoonbox addon ships this file;
 -- only the next line differs (which addon it belongs to; version nil = read it from the addon's .toc).
-local ADDON_ID, ADDON_NAME, ADDON_FOLDER, ADDON_VERSION = "auctionthis", "Auction This", "AuctionThis", nil
+local ADDON_ID, ADDON_NAME, ADDON_FOLDER, ADDON_VERSION = "auctionthis", "Auction This", "AuctionThis_Raccoonbox", nil
 
 -- Every copy registers its addon. The newest copy of the shared code (LIB) does the work; older copies
 -- step aside, so players get one welcome message and one version check however many addons they use.

@@ -696,7 +696,7 @@ local methods = {
 
         for _, cell in self.headCells do
             local tex = cell:GetNormalTexture()
-            tex:SetTexture[[Interface\AddOns\AuctionThis\WorldStateFinalScore-Highlight]]
+            tex:SetTexture[[Interface\AddOns\AuctionThis_Raccoonbox\WorldStateFinalScore-Highlight]]
             tex:SetTexCoord(.017, 1, .083, .909)
             tex:SetAlpha(.5)
         end
@@ -960,7 +960,7 @@ function M.new(parent, rows, columns)
 
         local tex = cell:CreateTexture()
         tex:SetAllPoints()
-        tex:SetTexture([[Interface\AddOns\AuctionThis\WorldStateFinalScore-Highlight]])
+        tex:SetTexture([[Interface\AddOns\AuctionThis_Raccoonbox\WorldStateFinalScore-Highlight]])
         tex:SetTexCoord(.017, 1, .083, .909)
         tex:SetAlpha(.5)
         cell:SetNormalTexture(tex)

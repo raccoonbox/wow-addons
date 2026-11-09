@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Auction This |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\INV_Misc_Coin_17
+## Notes: Auction house prices and flips: whole-AH scans, prices in item tooltips and a flip finder panel. Records your buys and posts in My Market. /auctionthis
+## Version: 0.1.0
+## OptionalDeps: MyMarket
+## SavedVariables: AuctionThisDB, RaccoonboxSharedDB
+
+RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
+AuctionThis.lua

@@ -1,6 +1,6 @@
 -- CraftWell: queue crafts in the profession window, remember them across sessions, and show
 -- what materials are still missing - with one-click buying at vendors and quick search at the AH.
-local ADDON = "CraftWell"
+local ADDON = "CraftWell_Raccoonbox"
 local db                                   -- CraftWellDB (per character)
 local MAX_QUEUE_ROWS, MAX_SHOP_ROWS = 10, 14
 local W = 320

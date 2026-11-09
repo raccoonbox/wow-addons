@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Mail Keeper |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\INV_Letter_03
+## Notes: Collect all button for your mailbox (skips COD mail) and a record of every auction house mail in My Market. /mailkeeper
+## Version: 0.1.0
+## OptionalDeps: MyMarket
+## SavedVariables: MailKeeperDB, RaccoonboxSharedDB
+
+RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
+MailKeeper.lua

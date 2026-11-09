@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: My Market |cffff9900[Raccoonbox]|r
+## IconTexture: Interface\Icons\INV_Misc_Coin_02
+## Notes: Diary of your gold: every gain and loss with where it happened and which item, plus your bags. Works with Auction This and Mail Keeper. /mymarket
+## Version: 0.1.0
+## SavedVariables: MyMarketDB, RaccoonboxSharedDB
+
+RaccoonboxWelcome.lua
+RaccoonboxOptions.lua
+MyMarket.lua

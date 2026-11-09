@@ -44,7 +44,7 @@ local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 ev:SetScript("OnEvent", function(self, event, arg)
 	if event == "ADDON_LOADED" then
-		if arg ~= "KeepTracking" then return end
+		if arg ~= "KeepTracking_Raccoonbox" then return end
 		KeepTrackingDB = KeepTrackingDB or {}
 		db = KeepTrackingDB
 		self:RegisterEvent("MINIMAP_UPDATE_TRACKING")

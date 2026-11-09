@@ -155,7 +155,7 @@ end
 local loader = CreateFrame("Frame")
 loader:RegisterEvent("ADDON_LOADED")
 loader:SetScript("OnEvent", function(self, _, name)
-	if name ~= "ValorChat" then return end
+	if name ~= "ValorChat_Raccoonbox" then return end
 	ValorChatDB = ValorChatDB or {}
 	for k, v in pairs(VC.defaults) do
 		if ValorChatDB[k] == nil then

@@ -162,7 +162,7 @@ ev:RegisterEvent("ADDON_LOADED")
 ev:SetScript("OnEvent", function(self, event, arg1, arg2)
 	if event == "ADDON_LOADED" then
 		if arg1 == "Blizzard_WorldMap" then HookMap() end
-		if arg1 ~= "QuestFreedom" then return end
+		if arg1 ~= "QuestFreedom_Raccoonbox" then return end
 		QuestFreedomDB = QuestFreedomDB or {}
 		db = QuestFreedomDB
 		if db.noFocus == nil then db.noFocus = true end

@@ -39,7 +39,7 @@ local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 ev:SetScript("OnEvent", function(self, event, arg)
 	if event == "ADDON_LOADED" then
-		if arg ~= "ValorPlates" then return end
+		if arg ~= "ValorPlates_Raccoonbox" then return end
 		ValorPlatesDB = ValorPlatesDB or {}
 		db = ValorPlatesDB
 		if db.lift == nil then db.lift = 40 end
