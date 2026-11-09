@@ -29,6 +29,9 @@ end
 local function Clean(frame)
 	local add = frame.AddSlotsButton
 	if add then
+		-- fully transparent and unclickable for good, so it can't flash for a frame when bags open
+		add:SetAlpha(0)
+		add:EnableMouse(false)
 		add:Hide()
 		if not add.hlsHooked then
 			add.hlsHooked = true
@@ -67,10 +70,23 @@ local function Queue()
 end
 
 for _, f in ipairs(BagFrames()) do
-	f:HookScript("OnShow", Queue)
+	if f.AddSlotsButton then f.AddSlotsButton:SetAlpha(0) end -- invisible from the very start
+	f:HookScript("OnShow", function(self)
+		if not InCombatLockdown() then pcall(Clean, self) end -- right away, before the first frame is drawn
+		Queue()
+	end)
 	for _, method in ipairs({ "Update", "UpdateItems", "UpdateItemLayout", "UpdateExtendedSlots" }) do
 		if type(f[method]) == "function" then hooksecurefunc(f, method, Queue) end
 	end
+	-- The game can lay out the slots after our quick checks, so keep checking (4 times a second,
+	-- only while this bag window is open). Cheap: it only looks at the window's own slot buttons.
+	local elapsed = 0
+	f:HookScript("OnUpdate", function(self, dt)
+		elapsed = elapsed + dt
+		if elapsed < 0.25 then return end
+		elapsed = 0
+		if not InCombatLockdown() then pcall(Clean, self) end
+	end)
 end
 
 local ev = CreateFrame("Frame")

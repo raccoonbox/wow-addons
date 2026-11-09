@@ -16,7 +16,7 @@ if not RaccoonboxWelcome then
 			if waited < DELAY then return end
 			this:SetScript("OnUpdate", nil)
 			local c = ChatTypeInfo and ChatTypeInfo["SYSTEM"] or { r = 1, g = 1, b = 0 }
-			DEFAULT_CHAT_FRAME:AddMessage("|cffff9900[Raccoonbox]|r Hey there, you're using Raccoonbox add-on(s)! Check out what other cool stuff |cff33ccffraccoonbox.com|r is producing. Thanks and peace <3", c.r, c.g, c.b)
+			DEFAULT_CHAT_FRAME:AddMessage("|cffff9900[Raccoonbox]|r Hey there, you're using Raccoonbox add-on(s)! Check out what other good design |cff33ccffraccoonbox.com|r is producing. Thanks and peace <3", c.r, c.g, c.b)
 		end)
 	end)
 end

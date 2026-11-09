@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: Chat Buttons |cffff9900[Raccoonbox]|r
+## Author: Raccoonbox
+## Notes: Small buttons above the chat: one click opens chat in Say, Party, Raid, Battleground, Guild, whisper reply and more. /chatbuttons
+## Version: 1.0.0
+## SavedVariables: ChatButtonsDB
+RaccoonboxWelcome.lua
+ChatButtons.lua

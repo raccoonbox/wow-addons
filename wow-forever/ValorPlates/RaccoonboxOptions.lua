@@ -2,7 +2,7 @@
 -- The newest copy wins. Each addon calls RaccoonboxOptions.AddPanel{...}; at login all pages are
 -- put under Esc > Options > AddOns > Raccoonbox. The main "Raccoonbox" page holds a few useful
 -- hidden game settings and lists what every installed Raccoonbox addon can do. /raccoonbox opens it.
-local VERSION = 3
+local VERSION = 4
 local ADDON_NAME = ... -- the folder this copy was loaded from (it ships RaccoonboxLogo.tga)
 if RaccoonboxOptions and (RaccoonboxOptions.version or 0) >= VERSION then return end
 
@@ -203,6 +203,10 @@ local function BuildMain(b)
 		"New quests no longer jump onto the objective tracker. Shift+click a quest in the quest log (L) to track it.",
 		function() return GetCVar("autoQuestWatch") == "0" end,
 		function(v) SetCVar("autoQuestWatch", v and "0" or "1"); SetCVar("autoQuestProgress", v and "0" or "1") end)
+	b:Check("Click on empty ground to clear your target",
+		"The opposite of the game's \"Sticky Targeting\" option.",
+		function() return GetCVar("deselectOnClick") == "1" end,
+		function(v) SetCVar("deselectOnClick", v and "1" or "0") end)
 	b:Choice("Health and mana numbers on your, your target's and party bars:", BAR_MODES, BarModeGet, BarModeSet)
 
 	b:Header("Your Raccoonbox add-ons")

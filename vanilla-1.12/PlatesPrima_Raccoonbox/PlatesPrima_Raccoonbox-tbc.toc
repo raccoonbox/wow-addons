@@ -1,0 +1,17 @@
+## Interface: 20400
+## Title: |cff33ffccPlates|cffffffff Prima |cffff9900[Raccoonbox]
+## Author: Raccoonbox (based on ShaguPlates by Shagu)
+## Notes: Nameplates with enemy and ally buffs above the name, debuffs below, purge alerts, castbars and class colors. Based on ShaguPlates. /platesprima for settings.
+## Version: 5.4.21
+## X-Prima-Version: 1.0.0
+## SavedVariables: ShaguPlates_profiles, ShaguPlates_addon_profiles, ShaguPlates_cache, PlatesPrima_db
+## SavedVariablesPerCharacter: ShaguPlates_config, ShaguPlates_init, ShaguPlates_playerDB
+
+RaccoonboxWelcome.lua
+ShaguPlates.lua
+
+init\env.xml
+init\compat.xml
+init\api.xml
+init\libs.xml
+init\modules.xml

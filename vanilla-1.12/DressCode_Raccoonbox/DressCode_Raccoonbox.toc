@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: Dress Code |cffff9900[Raccoonbox]|r
+## Author: Raccoonbox
+## Notes: Gear upgrades for your class, role and level, your armory, and a fitting room with saved outfits. /dresscode
+## Version: 1.0.0
+## OptionalDeps: pfQuest, pfQuest-turtle, AtlasLoot
+## SavedVariables: DressCodeDB
+## SavedVariablesPerCharacter: DressCodeChar
+RaccoonboxWelcome.lua
+Data.lua
+Core.lua
+UI.lua

@@ -1331,7 +1331,7 @@
 			</OnShow>
 		</Scripts>
 	</Frame>
-	<Button name="OutfitterMinimapButton" hidden="false" enableMouse="true" movable="true" parent="Minimap" toplevel="true">
+	<Button name="OutfitterMinimapButton" hidden="false" enableMouse="true" movable="true" parent="Minimap" toplevel="true" frameStrata="MEDIUM">
 		<Size>
 			<AbsDimension x="32" y="32"/>
 		</Size>
@@ -1344,6 +1344,8 @@
 		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
 		<Scripts>
 			<OnLoad>
+				this:SetFrameStrata(Minimap:GetFrameStrata());
+				this:SetFrameLevel(Minimap:GetFrameLevel() + 8);
 				this:RegisterForDrag("LeftButton");
 			</OnLoad>
 			<OnDragStart>

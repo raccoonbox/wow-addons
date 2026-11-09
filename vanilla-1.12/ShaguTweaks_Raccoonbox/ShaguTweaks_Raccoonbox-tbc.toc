@@ -1,5 +1,5 @@
 ## Interface: 20400
-## Title: |cffffcc00Shagu|cffffffffTweaks |cffff5555[BETA] |cffff9900[Raccoonbox]
+## Title: |cffffcc00Shagu|cffffffff Tweaks |cffff5555[BETA] |cffff9900[Raccoonbox]|r
 ## Author: Shagu
 ## Notes: A collection of tweaks and enhancements to the Default UI
 ## Notes-ruRU: Коллекция настроек и улучшений для стандартного пользовательского интерфейса.

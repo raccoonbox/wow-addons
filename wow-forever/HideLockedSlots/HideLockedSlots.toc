@@ -2,7 +2,7 @@
 ## Title: Hide Locked Slots |cffff9900[Raccoonbox]|r
 ## IconTexture: Interface\Icons\INV_Misc_Bag_08
 ## Notes: Hides the 4 locked "secure your account" backpack slots and the green + button.
-## Version: 1.0.1
+## Version: 1.0.2
 ## SavedVariables: RaccoonboxSharedDB
 
 RaccoonboxWelcome.lua

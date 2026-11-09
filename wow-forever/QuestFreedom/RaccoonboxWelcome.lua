@@ -11,7 +11,7 @@ if not RaccoonboxWelcome then
 		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 		C_Timer.After(DELAY, function()
 			local c = ChatTypeInfo and ChatTypeInfo["SYSTEM"] or { r = 1, g = 1, b = 0 }
-			DEFAULT_CHAT_FRAME:AddMessage("|cffff9900[Raccoonbox]|r Hey there, you're using Raccoonbox add-on(s)! Check out what other cool stuff |cff33ccffraccoonbox.com|r is producing." .. (RaccoonboxOptions and " Type |cffffd100/raccoonbox|r to see what your add-ons can do." or "") .. " Thanks and peace <3", c.r, c.g, c.b)
+			DEFAULT_CHAT_FRAME:AddMessage("|cffff9900[Raccoonbox]|r Hey there, you're using Raccoonbox add-on(s)! Check out what other good design |cff33ccffraccoonbox.com|r is producing." .. (RaccoonboxOptions and " Type |cffffd100/raccoonbox|r to see what your add-ons can do." or "") .. " Thanks and peace <3", c.r, c.g, c.b)
 		end)
 	end)
 end

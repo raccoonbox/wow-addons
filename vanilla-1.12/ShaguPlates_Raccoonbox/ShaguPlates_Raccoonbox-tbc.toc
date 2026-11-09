@@ -1,5 +1,5 @@
 ## Interface: 20400
-## Title: |cff33ffccShagu|cffffffffPlates |cffff9900[Raccoonbox]
+## Title: |cff33ffccShagu|cffffffff Plates |cffff9900[Raccoonbox]|r
 ## Author: Shagu
 ## Notes: Nameplate addon featuring castbars, class colors and much more. Type /splates to show the settings.
 ## Version: 5.4.21
