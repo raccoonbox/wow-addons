@@ -1,6 +1,8 @@
 -- Chat Buttons [Raccoonbox]
 -- Small buttons above the chat window. One click opens the chat box already set to that channel,
 -- and the channel stays selected for your next messages (no more surprise /say in a battleground).
+--  * click the same button again (or double-click it) to close the chat box and keep that channel,
+--    same as pressing Enter on an empty chat box
 --  * dimmed: you can't use that channel right now (not in a group, battleground, guild, ...)
 --  * highlighted: the channel the chat box is currently set to
 --  * Shift + drag to move the row, /chatbuttons reset to put it back above the chat
@@ -63,8 +65,34 @@ local function save_position()
 	ChatButtonsDB.pos = { point, relpoint, x, y }
 end
 
+-- the chat type a button stands for ("BATTLEGROUND", "CHANNEL5", ...), as current_type() reports it
+local function button_type(def)
+	if def.channelname then
+		local id = channel_id(def.channelname)
+		return id and ("CHANNEL" .. id)
+	end
+	return def.info
+end
+
+local current_type -- defined below
+
+-- what Enter does on an empty chat box: remember the channel for next time, then close the box
+local function remember_and_close()
+	local box = ChatFrameEditBox
+	local info = ChatTypeInfo[box.chatType]
+	if info and info.sticky == 1 then box.stickyType = box.chatType end
+	if box:GetText() == "" then
+		box:Hide()
+	end
+end
+
 local function open(def)
 	local box = ChatFrameEditBox
+	-- second click on the same button while its chat box is open = Enter
+	if box:IsVisible() and current_type() == button_type(def) then
+		remember_and_close()
+		return
+	end
 	if def.reply and ChatFrame_ReplyTell then
 		ChatFrame_ReplyTell()
 		return
@@ -129,6 +157,7 @@ for i, def in ipairs(BUTTONS) do
 			local who = ChatEdit_GetLastTellTarget(ChatFrameEditBox)
 			if who and who ~= "" then GameTooltip:AddLine("to " .. who, 1, 1, 1) end
 		end
+		GameTooltip:AddLine("Click again (or double-click) to keep this channel and close the chat", .6, .6, .6)
 		GameTooltip:AddLine("Shift + drag to move, right-click for layout", .6, .6, .6)
 		GameTooltip:Show()
 	end)
@@ -242,7 +271,7 @@ show_menu = function()
 end
 
 -- dim unusable buttons, highlight the channel the chat box is set to
-local function current_type()
+current_type = function()
 	local box = ChatFrameEditBox
 	local t = box.chatType
 	if t == "CHANNEL" and box.channelTarget then return "CHANNEL" .. box.channelTarget end
